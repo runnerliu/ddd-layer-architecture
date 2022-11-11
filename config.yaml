@@ -1,0 +1,12 @@
+server:
+  appName: "ddd-demo"
+  port: 8080
+  shutdownTimeoutTS: 1500
+  logWithBody: false
+persistence:
+  mysql:
+    uri: ""
+  mongodb:
+    uri: ""
+  redis:
+    uri: ""
