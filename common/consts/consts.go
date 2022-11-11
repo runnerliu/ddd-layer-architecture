@@ -15,4 +15,5 @@ var (
 	ErrMsgResponseCode = errors.New("invalid response code")
 
 	ErrCacheResultTypeMismatched = errors.New("result type mismatched")
+	ErrESQueryIndexData          = errors.New("query index data error")
 )
