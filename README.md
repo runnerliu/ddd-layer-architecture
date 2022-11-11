@@ -4,41 +4,69 @@
 
 ```
 .
-├── application             # 应用层
+├── application                 # 应用层
 │   └── service
-├── common                  # 通用类库
+├── common                      # 通用类库
 │   ├── consts
 │   │   └── consts.go
 │   ├── converter
 │   │   └── converter.go
+│   ├── encrypt
+│   │   └── aes.go
 │   ├── entity
 │   │   ├── do
 │   │   ├── dto
 │   │   ├── po
 │   │   ├── req
 │   │   └── vo
-│   ├── exceptions
-│   └── response
-├── document                # 文档
+│   ├── factory
+│   │   └── object_factory.go
+│   ├── fsm
+│   │   ├── errors.go
+│   │   ├── event.go
+│   │   └── fsm.go
+│   ├── response
+│   │   └── response.go
+│   ├── serializer
+│   │   └── encode.go
+│   └── utils.go
+├── document                    # 文档
 │   ├── docker
 │   │   └── Dockerfile
 │   └── swagger
-├── domain                  # 领域层
+│       └── doc
+├── domain                      # 领域层
 │   └── service
-├── infrastructure          # 基础服务层
+├── infrastructure              # 基础服务层
 │   ├── auth
+│   │   └── auth.go
 │   ├── cache
+│   │   ├── big_cache.go
+│   │   └── cache.go
 │   ├── config
+│   │   ├── config.go
+│   │   └── yaml_config.go
+│   ├── es
+│   │   └── es_client.go
+│   ├── http
+│   │   └── resty_client.go
 │   ├── mq
-│   └── persistence
-├── interface               # 用户接口层
+│   │   └── kafka_client.go
+│   ├── persistence
+│   │   ├── mongodb_client.go
+│   │   ├── mysql_client.go
+│   │   └── redis_client.go
+│   └── singleflight
+│       └── single_flight.go
+├── interface                   # 用户接口层
 │   └── web
 │       └── gin
 │           ├── controller
 │           ├── middleware
 │           └── router
-├── config.yaml             # 配置文件
+├── main.go                     # 主函数
+├── config.yaml                 # 配置文件
 ├── go.mod
-└── main.go
-├── README.md
+├── go.sum
+└── README.md
 ```
