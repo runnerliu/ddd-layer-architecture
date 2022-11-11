@@ -37,6 +37,7 @@
 │           ├── controller
 │           ├── middleware
 │           └── router
+├── config.yaml             # 配置文件
 ├── go.mod
 └── main.go
 ├── README.md
