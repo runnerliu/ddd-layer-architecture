@@ -13,4 +13,6 @@ var (
 	ErrMsgSuccess      = "success"
 	ErrMsgParams       = "params error"
 	ErrMsgResponseCode = errors.New("invalid response code")
+
+	ErrCacheResultTypeMismatched = errors.New("result type mismatched")
 )

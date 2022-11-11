@@ -68,8 +68,8 @@ func NewViperConfiguration(configName string, configPaths ...string) (Configurat
 	return v, nil
 }
 
-// NewDefaultViperConfiguration 创建默认的 viper 配置实例
-func NewDefaultViperConfiguration() (Configuration, error) {
+// NewDefaultYamlConfiguration 创建默认的配置实例
+func NewDefaultYamlConfiguration() (Configuration, error) {
 	var paths []string
 	if wd, err := os.Getwd(); err == nil {
 		paths = append(paths, []string{wd, path.Join(wd, "config")}...)
@@ -80,15 +80,15 @@ func NewDefaultViperConfiguration() (Configuration, error) {
 }
 
 var (
-	defaultViperConfigurationOnce sync.Once
-	defaultViperConfiguration     Configuration
-	defaultViperConfigurationErr  error
+	defaultConfigurationOnce sync.Once
+	defaultConfiguration     Configuration
+	defaultConfigurationErr  error
 )
 
-// GetDefaultViperConfiguration 创建配置读取服务实例
-func GetDefaultViperConfiguration() (Configuration, error) {
-	defaultViperConfigurationOnce.Do(func() {
-		defaultViperConfiguration, defaultViperConfigurationErr = NewDefaultViperConfiguration()
+// NewYamlConfiguration 创建配置读取服务实例
+func NewYamlConfiguration() (Configuration, error) {
+	defaultConfigurationOnce.Do(func() {
+		defaultConfiguration, defaultConfigurationErr = NewDefaultYamlConfiguration()
 	})
-	return defaultViperConfiguration, defaultViperConfigurationErr
+	return defaultConfiguration, defaultConfigurationErr
 }

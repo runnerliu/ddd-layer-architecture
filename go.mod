@@ -3,8 +3,10 @@ module ddd-demo
 go 1.17
 
 require (
+	github.com/allegro/bigcache v2.0.0+incompatible
 	github.com/go-resty/resty/v2 v2.7.0
 	github.com/spf13/viper v1.14.0
+	golang.org/x/sync v0.1.0
 )
 
 require (
