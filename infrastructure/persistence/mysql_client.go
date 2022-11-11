@@ -2,15 +2,9 @@ package persistence
 
 import (
 	"ddd-demo/common/factory"
-	"sync"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
-)
-
-var (
-	defaultMysqlClientOnce sync.Once
-	defaultMysqlClient     *gorm.DB
 )
 
 // NewMysqlClient 创建 Mysql 客户端
